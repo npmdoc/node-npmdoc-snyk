@@ -3,7 +3,7 @@
 
 [![NPM](https://nodei.co/npm/snyk.png?downloads=true)](https://www.npmjs.com/package/snyk)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-snyk/build/screenCapture.buildNpmdoc.browser.%252Fhome%252Ftravis%252Fbuild%252Fnpmdoc%252Fnode-npmdoc-snyk%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-snyk/build/apidoc.html)
+[![apidoc](https://npmdoc.github.io/node-npmdoc-snyk/build/screenCapture.buildApidoc.browser.%252Fhome%252Ftravis%252Fbuild%252Fnpmdoc%252Fnode-npmdoc-snyk%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-snyk/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-snyk/build/screenCapture.npmPackageListing.svg)
 
