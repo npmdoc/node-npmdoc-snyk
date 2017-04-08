@@ -1,0 +1,2013 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/Snyk/snyk#readme">snyk (v1.27.1)</a>
+</h1>
+<h4>snyk library and cli utility</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.snyk">module snyk</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">snyk.</span>isRequired</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.analytics">
+            function <span class="apidocSignatureSpan">snyk.</span>analytics
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.api_token">
+            function <span class="apidocSignatureSpan">snyk.</span>api_token
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.error">
+            function <span class="apidocSignatureSpan">snyk.</span>error
+            <span class="apidocSignatureSpan">(command)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.modules">
+            function <span class="apidocSignatureSpan">snyk.</span>modules
+            <span class="apidocSignatureSpan">(dir, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.monitor">
+            function <span class="apidocSignatureSpan">snyk.</span>monitor
+            <span class="apidocSignatureSpan">(root, meta, modules)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.spinner">
+            function <span class="apidocSignatureSpan">snyk.</span>spinner
+            <span class="apidocSignatureSpan">(label)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.test">
+            function <span class="apidocSignatureSpan">snyk.</span>test
+            <span class="apidocSignatureSpan">(root, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">snyk.</span>bus</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">snyk.</span>config</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">snyk.</span>detect</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">snyk.</span>isolate</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">snyk.</span>policy</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">snyk.</span>sub_process</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.snyk.analytics">module snyk.analytics</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.analytics.analytics">
+            function <span class="apidocSignatureSpan">snyk.</span>analytics
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.analytics.add">
+            function <span class="apidocSignatureSpan">snyk.analytics.</span>add
+            <span class="apidocSignatureSpan">(key, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.analytics.reset">
+            function <span class="apidocSignatureSpan">snyk.analytics.</span>reset
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.analytics.single">
+            function <span class="apidocSignatureSpan">snyk.analytics.</span>single
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.snyk.api_token">module snyk.api_token</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.api_token.api_token">
+            function <span class="apidocSignatureSpan">snyk.</span>api_token
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.api_token.exists">
+            function <span class="apidocSignatureSpan">snyk.api_token.</span>exists
+            <span class="apidocSignatureSpan">(label)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.snyk.detect">module snyk.detect</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.detect.detectPackageFile">
+            function <span class="apidocSignatureSpan">snyk.detect.</span>detectPackageFile
+            <span class="apidocSignatureSpan">(root)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.detect.detectPackageManager">
+            function <span class="apidocSignatureSpan">snyk.detect.</span>detectPackageManager
+            <span class="apidocSignatureSpan">(root, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.snyk.error">module snyk.error</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.error.error">
+            function <span class="apidocSignatureSpan">snyk.</span>error
+            <span class="apidocSignatureSpan">(command)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.error.message">
+            function <span class="apidocSignatureSpan">snyk.error.</span>message
+            <span class="apidocSignatureSpan">(error)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.snyk.isolate">module snyk.isolate</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.isolate.okay">
+            function <span class="apidocSignatureSpan">snyk.isolate.</span>okay
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.snyk.modules">module snyk.modules</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.modules.modules">
+            function <span class="apidocSignatureSpan">snyk.</span>modules
+            <span class="apidocSignatureSpan">(dir, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.modules.logicalTree">
+            function <span class="apidocSignatureSpan">snyk.modules.</span>logicalTree
+            <span class="apidocSignatureSpan">(fileTree, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.modules.physicalTree">
+            function <span class="apidocSignatureSpan">snyk.modules.</span>physicalTree
+            <span class="apidocSignatureSpan">(root, depType)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.modules.pluck">
+            function <span class="apidocSignatureSpan">snyk.modules.</span>pluck
+            <span class="apidocSignatureSpan">(root, path, name, range)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.modules.prune">
+            function <span class="apidocSignatureSpan">snyk.modules.</span>prune
+            <span class="apidocSignatureSpan">(pkg, shouldPrune)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.modules.unique">
+            function <span class="apidocSignatureSpan">snyk.modules.</span>unique
+            <span class="apidocSignatureSpan">(deps)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.modules.walk">
+            function <span class="apidocSignatureSpan">snyk.modules.</span>walk
+            <span class="apidocSignatureSpan">(deps, filter)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.snyk.policy">module snyk.policy</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.policy.add">
+            function <span class="apidocSignatureSpan">snyk.policy.</span>add
+            <span class="apidocSignatureSpan">(policy, type, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.policy.create">
+            function <span class="apidocSignatureSpan">snyk.policy.</span>create
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.policy.demunge">
+            function <span class="apidocSignatureSpan">snyk.policy.</span>demunge
+            <span class="apidocSignatureSpan">(policy, apiRoot)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.policy.filter">
+            function <span class="apidocSignatureSpan">snyk.policy.</span>filter
+            <span class="apidocSignatureSpan">(vulns, policy, root)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.policy.getByVuln">
+            function <span class="apidocSignatureSpan">snyk.policy.</span>getByVuln
+            <span class="apidocSignatureSpan">(policy, vuln)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.policy.load">
+            function <span class="apidocSignatureSpan">snyk.policy.</span>load
+            <span class="apidocSignatureSpan">(root, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.policy.loadFromText">
+            function <span class="apidocSignatureSpan">snyk.policy.</span>loadFromText
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.policy.matchToRule">
+            function <span class="apidocSignatureSpan">snyk.policy.</span>matchToRule
+            <span class="apidocSignatureSpan">(vuln, rule)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.policy.save">
+            function <span class="apidocSignatureSpan">snyk.policy.</span>save
+            <span class="apidocSignatureSpan">(object, root, spinner)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.snyk.spinner">module snyk.spinner</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">snyk.spinner.</span>isRequired</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.spinner.spinner">
+            function <span class="apidocSignatureSpan">snyk.</span>spinner
+            <span class="apidocSignatureSpan">(label)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.spinner.clear">
+            function <span class="apidocSignatureSpan">snyk.spinner.</span>clear
+            <span class="apidocSignatureSpan">(label)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.spinner.clearAll">
+            function <span class="apidocSignatureSpan">snyk.spinner.</span>clearAll
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.spinner.sticky">
+            function <span class="apidocSignatureSpan">snyk.spinner.</span>sticky
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.snyk.sub_process">module snyk.sub_process</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.snyk.sub_process.execute">
+            function <span class="apidocSignatureSpan">snyk.sub_process.</span>execute
+            <span class="apidocSignatureSpan">(command, args, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.snyk" id="apidoc.module.snyk">module snyk</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.analytics" id="apidoc.element.snyk.analytics">
+        function <span class="apidocSignatureSpan">snyk.</span>analytics
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function analytics(data) {
+  if (!data) {
+    data = {};
+  }
+
+  // merge any new data with data we picked up along the way
+  if (Array.isArray(data.args)) {
+    // this is an overhang from the cli/args.js and we don't want it
+    delete (data.args.slice(-1).pop() || {})._;
+  }
+
+  if (Object.keys(metadata).length) {
+    data.metadata = metadata;
+  }
+
+  return postAnalytics(data);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.api_token" id="apidoc.element.snyk.api_token">
+        function <span class="apidocSignatureSpan">snyk.</span>api_token
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function api() {
+  // note: config.TOKEN will potentially come via the environment
+  return config.api || config.TOKEN || userConfig.get('api');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.error" id="apidoc.element.snyk.error">
+        function <span class="apidocSignatureSpan">snyk.</span>error
+        <span class="apidocSignatureSpan">(command)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function error(command) {
+  var e = new Error('Unknown command "' + command + '"');
+  e.code = 'UNKNOWN_COMMAND';
+  return Promise.reject(e);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+cwd: cwd,
+    }, function (error, stdout, stderr) {
+if (error) {
+  return reject(error);
+}
+
+if (stderr.indexOf('ERR!') !== -1) {
+  console.<span class="apidocCodeKeywordSpan">error</span>(stderr.trim());
+  var e = new Error('npm update errors');
+  e.code = 'FAIL_UPDATE';
+  return reject(e);
+}
+
+debug('npm %s complete', method);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.modules" id="apidoc.element.snyk.modules">
+        function <span class="apidocSignatureSpan">snyk.</span>modules
+        <span class="apidocSignatureSpan">(dir, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">modules = function (dir, options) {
+  return physicalTree(dir).then(function (res) {
+    return logicalTree(res, options);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+
+    return acc;
+  }, []).sort().shift();
+
+  // then collect all the package deps and post a monitor
+  var cwd = path.resolve(candidate, '..');
+  snyk.<span class="apidocCodeKeywordSpan">modules</span>(cwd).then(snyk.monitor.bind(null, cwd, {
+    method: 'require',
+  }));
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.monitor" id="apidoc.element.snyk.monitor">
+        function <span class="apidocSignatureSpan">snyk.</span>monitor
+        <span class="apidocSignatureSpan">(root, meta, modules)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function monitor(root, meta, modules) {
+  var policyLocations = [root];
+  policyLocations = policyLocations.concat(pluckPolicies(modules));
+  var opts = { loose: true };
+  var packageManager = meta.packageManager || 'npm';
+  return apiTokenExists('snyk monitor')
+    .then(function () {
+      return snyk.policy.load(policyLocations, opts);
+    }).then(function (policy) {
+      analytics.add('packageManager', packageManager);
+      // YARN temporary fix to avoid BE changes
+      packageManager = packageManager === 'yarn' ? 'npm' : packageManager;
+      return new Promise(function (resolve, reject) {
+        request({
+          body: {
+            meta: {
+              method: meta.method,
+              hostname: os.hostname(),
+              id: meta.id || snyk.id || modules.name,
+              ci: isCI,
+              pid: process.pid,
+              node: process.version,
+              master: snyk.config.isMaster,
+              name: modules.name,
+              version: modules.version,
+              org: config.org ? decodeURIComponent(config.org) : undefined,
+            },
+            policy: policy.toString(),
+            package: modules,
+          },
+          gzip: true,
+          method: 'PUT',
+          headers: {
+            authorization: 'token ' + snyk.api,
+            'content-encoding': 'gzip',
+          },
+          url: config.API + '/monitor/' + packageManager,
+          json: true,
+        }, function (error, res, body) {
+          if (error) {
+            return reject(error);
+          }
+
+          if (res.statusCode === 200 || res.statusCode === 201) {
+            resolve(body);
+          } else {
+            var e = new Error('unexpected error: ' + body.message);
+            e.code = res.statusCode;
+            reject(e);
+          }
+        });
+      });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.spinner" id="apidoc.element.snyk.spinner">
+        function <span class="apidocSignatureSpan">snyk.</span>spinner
+        <span class="apidocSignatureSpan">(label)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createSpinner(label) {
+  if (!label) {
+    throw new Error('spinner requires a label');
+  }
+
+  if (spinners[label] === undefined) {
+    spinners[label] = [];
+  }
+
+  // helper...
+  return new Promise(function (resolve) {
+    debug('spinner: %s', label);
+    spinners[label].push(spinner({
+      // string: 'â—â—“â—‘â—’',
+      stream: sticky ? process.stdout : process.stderr,
+      interval: 75,
+      label: label,
+    }));
+
+    resolve();
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.test" id="apidoc.element.snyk.test">
+        function <span class="apidocSignatureSpan">snyk.</span>test
+        <span class="apidocSignatureSpan">(root, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function test(root, options, callback) {
+  if (typeof options === 'function') {
+    callback = options;
+    options = {};
+  }
+  if (!options) {
+    options = {};
+  }
+
+  var promise = executeTest(root, options);
+  if (callback) {
+    promise.then(function (res) {
+      callback(null, res);
+    }).catch(callback);
+  }
+  return promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+  }
+  return null;
+}
+
+function detectPackageManagerFromFile(file) {
+  var key = path.basename(file);
+  if (/\.gemspec$/.<span class="apidocCodeKeywordSpan">test</span>(key)) {
+    key = '.gemspec';
+  }
+  if (!(key in DETECTABLE_PACKAGE_MANAGERS)) {
+    throw new Error('Could not detect package manager for file: ' + file);
+  }
+  return DETECTABLE_PACKAGE_MANAGERS[key];
+}
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.snyk.analytics" id="apidoc.module.snyk.analytics">module snyk.analytics</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.analytics.analytics" id="apidoc.element.snyk.analytics.analytics">
+        function <span class="apidocSignatureSpan">snyk.</span>analytics
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function analytics(data) {
+  if (!data) {
+    data = {};
+  }
+
+  // merge any new data with data we picked up along the way
+  if (Array.isArray(data.args)) {
+    // this is an overhang from the cli/args.js and we don't want it
+    delete (data.args.slice(-1).pop() || {})._;
+  }
+
+  if (Object.keys(metadata).length) {
+    data.metadata = metadata;
+  }
+
+  return postAnalytics(data);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.analytics.add" id="apidoc.element.snyk.analytics.add">
+        function <span class="apidocSignatureSpan">snyk.analytics.</span>add
+        <span class="apidocSignatureSpan">(key, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">add = function (key, value) {
+  debug('add', key, value);
+  if (metadata[key]) {
+    if (!Array.isArray(metadata[key])) {
+      metadata[key] = [metadata[key]];
+    }
+    metadata[key].push(value);
+  } else {
+    metadata[key] = value;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+policyLocations = policyLocations.concat(pluckPolicies(modules));
+var opts = { loose: true };
+var packageManager = meta.packageManager || 'npm';
+return apiTokenExists('snyk monitor')
+  .then(function () {
+    return snyk.policy.load(policyLocations, opts);
+  }).then(function (policy) {
+    analytics.<span class="apidocCodeKeywordSpan">add</span>('packageManager', packageManager);
+    // YARN temporary fix to avoid BE changes
+    packageManager = packageManager === 'yarn' ? 'npm' : packageManager;
+    return new Promise(function (resolve, reject) {
+      request({
+        body: {
+          meta: {
+            method: meta.method,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.analytics.reset" id="apidoc.element.snyk.analytics.reset">
+        function <span class="apidocSignatureSpan">snyk.analytics.</span>reset
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reset = function () {
+  metadata = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.analytics.single" id="apidoc.element.snyk.analytics.single">
+        function <span class="apidocSignatureSpan">snyk.analytics.</span>single
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function postAnalytics(data) {
+  // if the user opt'ed out of analytics, then let's bail out early
+  // ths applies to all sending to protect user's privacy
+  if (snyk.config.get('disable-analytics') || config.DISABLE_ANALYTICS) {
+    debug('analytics disabled');
+    return Promise.resolve();
+  }
+
+  // get fingerprint from mac address
+  // snyk version
+  return version().then(function (version) {
+    data.version = version;
+    data.os = osName(os.platform(), os.release());
+    data.nodeVersion = process.version;
+
+    var mac = getMAC() || uuid.v4();
+    var shasum = crypto.createHash('sha1');
+    data.id = shasum.update(mac).digest('hex');
+
+    var headers = {};
+    if (snyk.api) {
+      headers.authorization = 'token ' + snyk.api;
+    }
+
+    data.ci = isCI;
+
+    debug(data);
+
+    return request({
+      body: {
+        data: data,
+      },
+      url: config.API + '/analytics/cli',
+      json: true,
+      method: 'post',
+      headers: headers,
+    });
+  }).catch(function (error) {
+    debug(error); // this swallows the analytics error
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.snyk.api_token" id="apidoc.module.snyk.api_token">module snyk.api_token</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.api_token.api_token" id="apidoc.element.snyk.api_token.api_token">
+        function <span class="apidocSignatureSpan">snyk.</span>api_token
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function api() {
+  // note: config.TOKEN will potentially come via the environment
+  return config.api || config.TOKEN || userConfig.get('api');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.api_token.exists" id="apidoc.element.snyk.api_token.exists">
+        function <span class="apidocSignatureSpan">snyk.api_token.</span>exists
+        <span class="apidocSignatureSpan">(label)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function exists(label) {
+  error.message = label || error.code;
+  return api() ? Promise.resolve() : Promise.reject(error);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.snyk.detect" id="apidoc.module.snyk.detect">module snyk.detect</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.detect.detectPackageFile" id="apidoc.element.snyk.detect.detectPackageFile">
+        function <span class="apidocSignatureSpan">snyk.detect.</span>detectPackageFile
+        <span class="apidocSignatureSpan">(root)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function detectPackageFile(root) {
+  for (var i = 0; i &lt; DETECTABLE_FILES.length; i++) {
+    var file = DETECTABLE_FILES[i];
+    if (fs.existsSync(path.resolve(root, file))) {
+      return file;
+    }
+  }
+  return null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.detect.detectPackageManager" id="apidoc.element.snyk.detect.detectPackageManager">
+        function <span class="apidocSignatureSpan">snyk.detect.</span>detectPackageManager
+        <span class="apidocSignatureSpan">(root, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function detectPackageManager(root, options) {
+  var packageManager;
+  if (isCodeTest(root)) {
+    if (localFileSuppliedButNotFound(root, options.file)) {
+      throw new Error('File not found: ' + options.file);
+    }
+    var file = options.file || detectPackageFile(root) || 'package.json';
+    packageManager = detectPackageManagerFromFile(file);
+  } else {
+    var registry = options.registry || 'npm';
+    packageManager = detectPackageManagerFromRegistry(registry);
+  }
+  return packageManager;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.snyk.error" id="apidoc.module.snyk.error">module snyk.error</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.error.error" id="apidoc.element.snyk.error.error">
+        function <span class="apidocSignatureSpan">snyk.</span>error
+        <span class="apidocSignatureSpan">(command)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function error(command) {
+  var e = new Error('Unknown command "' + command + '"');
+  e.code = 'UNKNOWN_COMMAND';
+  return Promise.reject(e);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+cwd: cwd,
+    }, function (error, stdout, stderr) {
+if (error) {
+  return reject(error);
+}
+
+if (stderr.indexOf('ERR!') !== -1) {
+  console.<span class="apidocCodeKeywordSpan">error</span>(stderr.trim());
+  var e = new Error('npm update errors');
+  e.code = 'FAIL_UPDATE';
+  return reject(e);
+}
+
+debug('npm %s complete', method);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.error.message" id="apidoc.element.snyk.error.message">
+        function <span class="apidocSignatureSpan">snyk.error.</span>message
+        <span class="apidocSignatureSpan">(error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">message = function (error) {
+  var message = error; // defaults to a string (which is super unlikely)
+  if (error instanceof Error) {
+    if (error.code === 'VULNS') {
+      return error.message;
+    }
+
+    // try to lookup the error string based either on the error code OR
+    // the actual error.message (which can be "Unauthorized" for instance),
+    // otherwise send the error message back
+    message = codes[error.code || error.message] ||
+              errors[error.code || error.message];
+    if (message) {
+      message = message.replace(/(%s)/g, error.message).trim();
+      message = chalk.bold.red(message);
+    } else if (error.code) { // means it's a code error
+      message = 'An unknown error occurred. Please include the trace below ' +
+                'when reporting to Snyk:\n\n' + error.stack;
+    } else { // should be one of ours
+      message = error.message;
+    }
+  }
+
+  return message;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.snyk.isolate" id="apidoc.module.snyk.isolate">module snyk.isolate</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.isolate.okay" id="apidoc.element.snyk.isolate.okay">
+        function <span class="apidocSignatureSpan">snyk.isolate.</span>okay
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">okay = function () {
+  return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  snyk.bus.emit('after:module', module);
+}
+
+function registerExtension(ext) {
+  var old = oldHandlers[ext] || oldHandlers['.js'] || require.extensions['.js'];
+
+  require.extensions[ext] = function (m, filename) {
+    if (snyk.isolate.<span class="apidocCodeKeywordSpan">okay</span>(filename)) {
+      loader(m, filename, old);
+    }
+  };
+}
+
+
+function hookExtensions(_exts) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.snyk.modules" id="apidoc.module.snyk.modules">module snyk.modules</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.modules.modules" id="apidoc.element.snyk.modules.modules">
+        function <span class="apidocSignatureSpan">snyk.</span>modules
+        <span class="apidocSignatureSpan">(dir, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">modules = function (dir, options) {
+  return physicalTree(dir).then(function (res) {
+    return logicalTree(res, options);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+
+    return acc;
+  }, []).sort().shift();
+
+  // then collect all the package deps and post a monitor
+  var cwd = path.resolve(candidate, '..');
+  snyk.<span class="apidocCodeKeywordSpan">modules</span>(cwd).then(snyk.monitor.bind(null, cwd, {
+    method: 'require',
+  }));
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.modules.logicalTree" id="apidoc.element.snyk.modules.logicalTree">
+        function <span class="apidocSignatureSpan">snyk.modules.</span>logicalTree
+        <span class="apidocSignatureSpan">(fileTree, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function logicalTree(fileTree, options) {
+  if (!options) {
+    options = {};
+  }
+
+  problems = [];
+  var logicalRoot = copy(fileTree, fileTree.__from, true);
+  logicalRoot.dependencies = walkDeps(fileTree, fileTree);
+
+  var removedPaths = [];
+
+  if (!options.dev) {
+    // do a shallow pass on the deps and strip out dev deps
+    Object.keys(fileTree.dependencies).forEach(function (name) {
+      var dep = fileTree.dependencies[name];
+      // if we're not interested in devDeps, then strip them out
+      if (dep.depType === depTypes.DEV) {
+        // since dev deps are only ever on the root, we know we can remove it
+        // directly from the logicalRoot.dependencies
+        removedPaths.push(dep.__from);
+        delete logicalRoot.dependencies[dep.name];
+        return;
+      }
+    });
+  }
+
+  logicalRoot.numFileDependencies = 0;
+
+  walk(fileTree.dependencies, function (dep) {
+    logicalRoot.numFileDependencies++;
+    if (!dep.__used) {
+      var deppath = dep.__from.slice(0, -1).toString();
+      var removed = removedPaths.filter(function (path) {
+        return deppath.indexOf(path) === 0;
+      }).length;
+
+      if (removed) {
+        return false; // this was from a dev dep, so let's lose it
+      }
+
+      var leaf = copy(dep);
+
+      var issue = format('%s: %s@%s (from %s) &gt; %s', ext, leaf.name,
+        leaf.version, leaf.dep, path.relative('.', leaf.__filename));
+      leaf.problems = [issue];
+      problems.push(issue);
+      leaf.extraneous = true;
+      leaf.depType = depTypes.EXTRANEOUS;
+      leaf.dependencies = walkDeps(fileTree, dep);
+      walk(leaf.dependencies, function (dep) {
+        dep.extraneous = true;
+        dep.depType = depTypes.EXTRANEOUS;
+      });
+      insertLeaf(logicalRoot, leaf, dep.__from);
+    }
+  });
+
+  logicalRoot.numDependencies = Object.keys(
+    unique(logicalRoot).dependencies
+  ).length;
+
+  logicalRoot.pluck = pluck.bind(null, fileTree);
+  logicalRoot.unique = unique.bind(null, logicalRoot);
+  logicalRoot.problems = problems.slice(0);
+
+  return logicalRoot;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.modules.physicalTree" id="apidoc.element.snyk.modules.physicalTree">
+        function <span class="apidocSignatureSpan">snyk.modules.</span>physicalTree
+        <span class="apidocSignatureSpan">(root, depType)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function loadModules(root, depType) {
+  tryRequire.cache.reset(); // reset the package cache on re-run
+  return loadModulesInternal(root, depType || null).then(function (tree) {
+    // ensure there's no missing packages our known root deps
+    var missing = [];
+    if (tree.__dependencies) {
+      Object.keys(tree.__dependencies).forEach(function (name) {
+        if (!tree.dependencies[name]) {
+          missing.push(resolve(name, root).then(function (dir) {
+            return loadModulesInternal(dir, depTypes.PROD, {
+              __from: [tree.name + '@' + tree.version, name],
+            });
+          }).catch(function (e) {
+            if (e.code === 'NO_PACKAGE_FOUND') {
+              return false;
+            }
+          }));
+        }
+      });
+    }
+
+    if (missing.length) {
+      return Promise.all(missing).then(function (packages) {
+        packages.filter(Boolean).forEach(function (pkg) {
+          pkg.dep = tree.__dependencies[pkg.name];
+          tree.dependencies[pkg.name] = pkg;
+        });
+        return tree;
+      });
+    }
+
+    return tree;
+  });
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.modules.pluck" id="apidoc.element.snyk.modules.pluck">
+        function <span class="apidocSignatureSpan">snyk.modules.</span>pluck
+        <span class="apidocSignatureSpan">(root, path, name, range)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function pluck(root, path, name, range) {
+  if (range === 'latest') {
+    range = '*';
+  }
+
+  // Cycle through the tree path via the root tree object **ala node require**.
+  // note that we don't need the first item in the path (which is the root
+  // package name).
+  var from = path.slice(0);
+  var rootPath = moduleToObject(from.shift(), parseOptions).name;
+
+  // if the root of the virtual tree doesn't even match our path, bail out
+  if (rootPath !== root.name) {
+    return false;
+  }
+
+  // do a check to see if the last item in the path is actually the package
+  // we're looking for, and if it's not, push it on
+  if (from.length !== 0 &amp;&amp;
+      moduleToObject(from.slice(-1).pop(), parseOptions).name === name) {
+    from.pop();
+  }
+
+  // then we always put the target package on the end of the chain
+  // to ensure it's in exactly the right format to be used in `getMatch`
+  from.push(name + '@' + range);
+
+  debug('using forward search %s@%s in %s', from.join(' &gt; '));
+
+  var match = false;
+  var leaf = root;
+  var realPath = [];
+
+  while (from.length) {
+    var pkg = moduleToObject(from[0], parseOptions);
+    var test = getMatch(leaf, pkg.name, pkg.version);
+
+    if (test) {
+      from.shift();
+      realPath.push(leaf);
+      leaf = test;
+    } else {
+      leaf = realPath.pop();
+      if (!leaf) {
+        return false;
+      }
+    }
+  }
+
+  return leaf.name === name ? leaf : false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.modules.prune" id="apidoc.element.snyk.modules.prune">
+        function <span class="apidocSignatureSpan">snyk.modules.</span>prune
+        <span class="apidocSignatureSpan">(pkg, shouldPrune)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function prune(pkg, shouldPrune) {
+  var remove = shouldPrune(pkg);
+  if (!remove) {
+    pkg.dependencies = {};
+  }
+
+  var deps = Object.keys(pkg.dependencies || {});
+
+  if (deps.length) {
+    remove = deps.filter(function (name) {
+      if (prune(pkg.dependencies[name], shouldPrune)) {
+        delete pkg.dependencies[name];
+        return false;
+      }
+      return true;
+    }).length;
+    remove = remove === 0;
+  }
+
+  return remove;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.modules.unique" id="apidoc.element.snyk.modules.unique">
+        function <span class="apidocSignatureSpan">snyk.modules.</span>unique
+        <span class="apidocSignatureSpan">(deps)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function unique(deps) {
+  var res = copy(deps);
+  res.dependencies = {};
+
+  walk(deps, function (dep) {
+    var shallowCopy = copy(dep);
+    res.dependencies[dep.name + '@' + dep.version] = shallowCopy;
+  });
+
+  return res;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.modules.walk" id="apidoc.element.snyk.modules.walk">
+        function <span class="apidocSignatureSpan">snyk.modules.</span>walk
+        <span class="apidocSignatureSpan">(deps, filter)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function walk(deps, filter) {
+  if (!deps) {
+    return [];
+  }
+
+  if (deps.dependencies) {
+    deps = deps.dependencies;
+  }
+
+  Object.keys(deps).forEach(function (name) {
+    var res = filter(deps[name], name, deps);
+    if (!res &amp;&amp; deps[name] &amp;&amp; deps[name].dep) {
+      walk(deps[name].dependencies, filter);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.snyk.policy" id="apidoc.module.snyk.policy">module snyk.policy</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.policy.add" id="apidoc.element.snyk.policy.add">
+        function <span class="apidocSignatureSpan">snyk.policy.</span>add
+        <span class="apidocSignatureSpan">(policy, type, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function add(policy, type, options) {
+  if (type !== 'ignore' &amp;&amp; type !== 'patch') {
+    throw new Error('policy.add: unknown type "' + type + '" to add to');
+  }
+
+  if (!options || !options.id || !options.path) {
+    throw new Error('policy.add: required option props { id, path }');
+  }
+
+  var id = options.id;
+  var path = options.path;
+  var data = Object.keys(options).reduce(function (acc, curr) {
+    if (curr === 'id' || curr === 'path') {
+      return acc;
+    }
+
+    acc[curr] = options[curr];
+    return acc;
+  }, {});
+
+  if (!policy[type][id]) {
+    policy[type][id] = [];
+  }
+
+<span class="apidocCodeCommentSpan">  /* istanbul ignore if */
+</span>  if (policy[type][id][path]) {
+    debug('policy.add: path already exists', policy[type][id][path]);
+  }
+
+  var rule = {};
+  rule[path] = data;
+
+  policy[type][id].push(rule);
+
+  return policy;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+policyLocations = policyLocations.concat(pluckPolicies(modules));
+var opts = { loose: true };
+var packageManager = meta.packageManager || 'npm';
+return apiTokenExists('snyk monitor')
+  .then(function () {
+    return snyk.policy.load(policyLocations, opts);
+  }).then(function (policy) {
+    analytics.<span class="apidocCodeKeywordSpan">add</span>('packageManager', packageManager);
+    // YARN temporary fix to avoid BE changes
+    packageManager = packageManager === 'yarn' ? 'npm' : packageManager;
+    return new Promise(function (resolve, reject) {
+      request({
+        body: {
+          meta: {
+            method: meta.method,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.policy.create" id="apidoc.element.snyk.policy.create">
+        function <span class="apidocSignatureSpan">snyk.policy.</span>create
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function create() {
+  return loadFromText('');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.policy.demunge" id="apidoc.element.snyk.policy.demunge">
+        function <span class="apidocSignatureSpan">snyk.policy.</span>demunge
+        <span class="apidocSignatureSpan">(policy, apiRoot)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function demunge(policy, apiRoot) {
+  if (!apiRoot) {
+    apiRoot = '';
+  }
+
+  var res = ['ignore', 'patch'].reduce(function (acc, type) {
+    acc[type] = policy[type] ? Object.keys(policy[type]).map(function (id) {
+      var paths = policy[type][id].map(function (pathObj) {
+        var path = Object.keys(pathObj).pop();
+        var res = {
+          path: path,
+        };
+        if (type === 'ignore') {
+          res.reason = pathObj[path].reason;
+          res.expires = new Date(pathObj[path].expires);
+        }
+
+        return res;
+      });
+      return {
+        id: id,
+        url: apiRoot + '/vuln/' + id,
+        paths: paths,
+      };
+    }) : [];
+    return acc;
+  }, {});
+
+  res.version = policy.version;
+
+  return res;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.policy.filter" id="apidoc.element.snyk.policy.filter">
+        function <span class="apidocSignatureSpan">snyk.policy.</span>filter
+        <span class="apidocSignatureSpan">(vulns, policy, root)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function filter(vulns, policy, root) {
+  if (!root) {
+    root = process.cwd();
+  }
+
+  if (vulns.ok) {
+    return vulns;
+  }
+
+  var filtered = {
+    ignore: [],
+    patch: [],
+  };
+
+  // strip the ignored modules from the results
+  vulns.vulnerabilities = ignore(
+    policy.ignore,
+    vulns.vulnerabilities,
+    filtered.ignore
+  );
+
+  vulns.vulnerabilities = patch(
+    policy.patch,
+    vulns.vulnerabilities,
+    root,
+    policy.skipVerifyPatch ? true : false,
+    filtered.patch
+  );
+
+  if (policy.suggest) {
+    vulns.vulnerabilities = notes(
+      policy.suggest,
+      vulns.vulnerabilities,
+      root
+    );
+  }
+
+  // if there's no vulns after the ignore process, let's reset the `ok`
+  // state and remove the vulns entirely.
+  if (vulns.vulnerabilities.length === 0) {
+    vulns.ok = true;
+    vulns.vulnerabilities = [];
+  }
+
+  vulns.filtered = filtered;
+
+  debug('&gt; has threshold? %s', policy.failThreshold);
+
+  if (policy.failThreshold &amp;&amp; vulns.ok === false) {
+    // check what's left and switch the failure flag if there's anything
+    // under our threshold
+    var levels = {
+      high: 3,
+      medium: 2,
+      low: 1,
+    };
+    var level = levels[policy.failThreshold];
+    vulns.ok = true;
+    vulns.vulnerabilities.some(function (vuln) {
+      if (levels[vuln.severity] &gt;= level) {
+        vulns.ok = false;
+        return true; // breaks
+      }
+    });
+  }
+
+  return vulns;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  'bamboo.buildKey',
+  'PHPCI',
+  'GOCD_SERVER_HOST',
+  'BUILDKITE',
+  'TF_BUILD',
+];
+
+module.exports = !!Object.keys(process.env).<span class="apidocCodeKeywordSpan">filter</span>(function (env) {
+  return ciEnvs.indexOf(env) !== -1;
+}).length;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.policy.getByVuln" id="apidoc.element.snyk.policy.getByVuln">
+        function <span class="apidocSignatureSpan">snyk.policy.</span>getByVuln
+        <span class="apidocSignatureSpan">(policy, vuln)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getByVuln(policy, vuln) {
+  var found = null;
+
+  if (!policy || !vuln) {
+    return found;
+  }
+
+  ['ignore', 'patch'].forEach(function (key) {
+    Object.keys(policy[key] || []).forEach(function (p) {
+      if (p === vuln.id) {
+        policy[key][p].forEach(function (rule) {
+          if (matchToRule(vuln, rule)) {
+            found = {
+              type: key,
+              id: vuln.id,
+              rule: vuln.from,
+            };
+            var rootRule = Object.keys(rule).pop();
+            Object.keys(rule[rootRule]).forEach(function (key) {
+              found[key] = rule[rootRule][key];
+            });
+          }
+        });
+      }
+    });
+  });
+
+  return found;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.policy.load" id="apidoc.element.snyk.policy.load">
+        function <span class="apidocSignatureSpan">snyk.policy.</span>load
+        <span class="apidocSignatureSpan">(root, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function load(root, options) {
+  if (!Array.isArray(root) &amp;&amp; typeof root !== 'string') {
+    options = root;
+    root = null;
+  }
+
+  if (!root) {
+    root = process.cwd();
+  }
+
+  if (!options) {
+    options = {};
+  }
+
+  var ignorePolicy = !!options['ignore-policy'];
+
+  var filename = '';
+  if (Array.isArray(root)) {
+    // we do a bit of a dance to get the first item in the array, and
+    // use it as our filename
+    filename = root[0];
+  } else {
+    if (root.indexOf('.snyk') === -1) {
+      root = path.resolve(root, '.snyk');
+    }
+    filename = root;
+  }
+
+  if (filename.indexOf('.snyk') === -1) {
+    filename = path.resolve(filename, '.snyk');
+  }
+
+  var promise = new Promise(function (resolve) {
+    if (ignorePolicy) {
+      return resolve(parse.import());
+    }
+
+    if (!ignorePolicy &amp;&amp; Array.isArray(root)) {
+      return resolve(mergePolicies(root, options).then(function (res) {
+        debug('final policy:');
+        debug(JSON.stringify(res, '', 2));
+        return res;
+      }));
+    }
+
+    resolve(fs.readFile(filename, 'utf8').then(parse.import));
+  });
+
+  var promises = [
+    promise,
+    fs.stat(filename).catch(function () {
+      return {};
+    }),
+  ];
+
+  return Promise.all(promises).catch(function (error) {
+    if (options.loose &amp;&amp; error.code === 'ENOENT') {
+      debug('ENOENT on file, but running loose');
+      return [parse.import(), {}];
+    }
+
+    throw error;
+  }).then(function (res) {
+    var policy = res[0];
+
+    policy.__modified = res[1].mtime;
+    policy.__created = res[1].birthtime || res[1].ctime;
+
+    if (options.loose &amp;&amp; !policy.__modified) {
+      policy.__filename = null;
+    } else {
+      policy.__filename = path.relative(process.cwd(), filename);
+    }
+
+    return policy;
+  }).then(attachMethods);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+function monitor(root, meta, modules) {
+var policyLocations = [root];
+policyLocations = policyLocations.concat(pluckPolicies(modules));
+var opts = { loose: true };
+var packageManager = meta.packageManager || 'npm';
+return apiTokenExists('snyk monitor')
+  .then(function () {
+    return snyk.policy.<span class="apidocCodeKeywordSpan">load</span>(policyLocations, opts);
+  }).then(function (policy) {
+    analytics.add('packageManager', packageManager);
+    // YARN temporary fix to avoid BE changes
+    packageManager = packageManager === 'yarn' ? 'npm' : packageManager;
+    return new Promise(function (resolve, reject) {
+      request({
+        body: {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.policy.loadFromText" id="apidoc.element.snyk.policy.loadFromText">
+        function <span class="apidocSignatureSpan">snyk.policy.</span>loadFromText
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function loadFromText(text) {
+  return new Promise(function (resolve) {
+    var policy = parse.import(text);
+    var now = Date.now();
+
+    policy.__filename = '';
+    policy.__modified = now;
+    policy.__created = now;
+
+    resolve(policy);
+  }).then(attachMethods);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.policy.matchToRule" id="apidoc.element.snyk.policy.matchToRule">
+        function <span class="apidocSignatureSpan">snyk.policy.</span>matchToRule
+        <span class="apidocSignatureSpan">(vuln, rule)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function matchToRule(vuln, rule) {
+  return Object.keys(rule).some(function (path) {
+    return matchToSingleRule(vuln, path);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.policy.save" id="apidoc.element.snyk.policy.save">
+        function <span class="apidocSignatureSpan">snyk.policy.</span>save
+        <span class="apidocSignatureSpan">(object, root, spinner)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function save(object, root, spinner) {
+  var filename = root ?
+    path.resolve(root, '.snyk') :
+    defaultFilename();
+
+  var lbl = 'Saving .snyk policy file...';
+
+  if (!spinner) {
+    spinner = function (res) {
+      return Promise.resolve(res);
+    };
+    spinner.clear = spinner;
+  }
+
+  return spinner(lbl).then(function () {
+    return parse.export(object);
+  }).then(function (yaml) {
+    return fs.writeFile(filename, yaml);
+  }).then(spinner.clear(lbl));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.snyk.spinner" id="apidoc.module.snyk.spinner">module snyk.spinner</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.spinner.spinner" id="apidoc.element.snyk.spinner.spinner">
+        function <span class="apidocSignatureSpan">snyk.</span>spinner
+        <span class="apidocSignatureSpan">(label)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createSpinner(label) {
+  if (!label) {
+    throw new Error('spinner requires a label');
+  }
+
+  if (spinners[label] === undefined) {
+    spinners[label] = [];
+  }
+
+  // helper...
+  return new Promise(function (resolve) {
+    debug('spinner: %s', label);
+    spinners[label].push(spinner({
+      // string: 'â—â—“â—‘â—’',
+      stream: sticky ? process.stdout : process.stderr,
+      interval: 75,
+      label: label,
+    }));
+
+    resolve();
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.spinner.clear" id="apidoc.element.snyk.spinner.clear">
+        function <span class="apidocSignatureSpan">snyk.spinner.</span>clear
+        <span class="apidocSignatureSpan">(label)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clear = function (label) {
+  if (spinners[label] === undefined) {
+    throw new Error('unknown spinner label: ' + label);
+  }
+
+  return function (res) {
+    debug('clearing %s (%s)', label, spinners[label].length);
+    if (spinners[label].length) {
+      var s = spinners[label].pop();
+      if (s) {
+        s.clear();
+      }
+    }
+    return res;
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+
+  return function (res) {
+    debug('clearing %s (%s)', label, spinners[label].length);
+    if (spinners[label].length) {
+      var s = spinners[label].pop();
+      if (s) {
+        s.<span class="apidocCodeKeywordSpan">clear</span>();
+      }
+    }
+    return res;
+  };
+};
+
+createSpinner.clearAll = function () {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.spinner.clearAll" id="apidoc.element.snyk.spinner.clearAll">
+        function <span class="apidocSignatureSpan">snyk.spinner.</span>clearAll
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clearAll = function () {
+  Object.keys(spinners).map(function (lbl) {
+    createSpinner.clear(lbl)();
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.spinner.sticky" id="apidoc.element.snyk.spinner.sticky">
+        function <span class="apidocSignatureSpan">snyk.spinner.</span>sticky
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sticky = function (s) {
+  sticky = s === undefined ? true : s;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.snyk.sub_process" id="apidoc.module.snyk.sub_process">module snyk.sub_process</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.snyk.sub_process.execute" id="apidoc.element.snyk.sub_process.execute">
+        function <span class="apidocSignatureSpan">snyk.sub_process.</span>execute
+        <span class="apidocSignatureSpan">(command, args, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">execute = function (command, args, options) {
+  var spawnOptions = { shell: true };
+  if (options &amp;&amp; options.cwd) {
+    spawnOptions.cwd = options.cwd;
+  }
+
+  return new Promise(function (resolve, reject) {
+    var stdout = '';
+    var stderr = '';
+
+    var proc = childProcess.spawn(command, args, spawnOptions);
+    proc.stdout.on('data', function (data) { stdout = stdout + data; });
+    proc.stderr.on('data', function (data) { stderr = stderr + data; });
+
+    proc.on('close', function (code) {
+      if (code !== 0) {
+        return reject(stdout || stderr);
+      }
+      resolve({ stdout: stdout, stderr: stderr });
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
