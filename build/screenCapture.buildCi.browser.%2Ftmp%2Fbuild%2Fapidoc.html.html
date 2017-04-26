@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/Snyk/snyk#readme"
-
-    >snyk (v1.29.0)</a>
+    <a href="https://github.com/Snyk/snyk#readme">snyk (v1.29.0)</a>
 </h1>
 <h4>snyk library and cli utility</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.snyk">module snyk</a><ol>
 
@@ -290,9 +283,9 @@
   }, []).sort().shift();
 
   // then collect all the package deps and post a monitor
-  var cwd = path.resolve(candidate, &#x27;..&#x27;);
+  var cwd = path.resolve(candidate, '..');
   snyk.<span class="apidocCodeKeywordSpan">modules</span>(cwd).then(snyk.monitor.bind(null, cwd, {
-    method: &#x27;require&#x27;,
+    method: 'require',
   }));
 }
 ...</pre></li>
@@ -309,7 +302,7 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function createSpinner(label) {
   if (!label) {
-    throw new Error(&#x27;spinner requires a label&#x27;);
+    throw new Error('spinner requires a label');
   }
 
   if (spinners[label] === undefined) {
@@ -318,9 +311,9 @@
 
   // helper...
   return new Promise(function (resolve) {
-    debug(&#x27;spinner: %s&#x27;, label);
+    debug('spinner: %s', label);
     spinners[label].push(spinner({
-      // string: &#x27;◐◓◑◒&#x27;,
+      // string: 'â—â—“â—‘â—’',
       stream: sticky ? process.stdout : process.stderr,
       interval: 75,
       label: label,
@@ -359,7 +352,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function detectPackageFile(root) {
-  for (var i = 0; i &#x3c; DETECTABLE_FILES.length; i++) {
+  for (var i = 0; i &lt; DETECTABLE_FILES.length; i++) {
     var file = DETECTABLE_FILES[i];
     if (fs.existsSync(path.resolve(root, file))) {
       return file;
@@ -383,12 +376,12 @@
   var packageManager;
   if (isCodeTest(root)) {
     if (localFileSuppliedButNotFound(root, options.file)) {
-      throw new Error(&#x27;File not found: &#x27; + options.file);
+      throw new Error('File not found: ' + options.file);
     }
-    var file = options.file || detectPackageFile(root) || &#x27;package.json&#x27;;
+    var file = options.file || detectPackageFile(root) || 'package.json';
     packageManager = detectPackageManagerFromFile(file);
   } else {
-    var registry = options.registry || &#x27;npm&#x27;;
+    var registry = options.registry || 'npm';
     packageManager = detectPackageManagerFromRegistry(registry);
   }
   return packageManager;
@@ -438,9 +431,9 @@ try {
   }, []).sort().shift();
 
   // then collect all the package deps and post a monitor
-  var cwd = path.resolve(candidate, &#x27;..&#x27;);
+  var cwd = path.resolve(candidate, '..');
   snyk.<span class="apidocCodeKeywordSpan">modules</span>(cwd).then(snyk.monitor.bind(null, cwd, {
-    method: &#x27;require&#x27;,
+    method: 'require',
   }));
 }
 ...</pre></li>
@@ -470,7 +463,7 @@ try {
     // do a shallow pass on the deps and strip out dev deps
     Object.keys(fileTree.dependencies).forEach(function (name) {
       var dep = fileTree.dependencies[name];
-      // if we&#x27;re not interested in devDeps, then strip them out
+      // if we're not interested in devDeps, then strip them out
       if (dep.depType === depTypes.DEV) {
         // since dev deps are only ever on the root, we know we can remove it
         // directly from the logicalRoot.dependencies
@@ -492,13 +485,13 @@ try {
       }).length;
 
       if (removed) {
-        return false; // this was from a dev dep, so let&#x27;s lose it
+        return false; // this was from a dev dep, so let's lose it
       }
 
       var leaf = copy(dep);
 
-      var issue = format(&#x27;%s: %s@%s (from %s) &#x3e; %s&#x27;, ext, leaf.name,
-        leaf.version, leaf.dep, path.relative(&#x27;.&#x27;, leaf.__filename));
+      var issue = format('%s: %s@%s (from %s) &gt; %s', ext, leaf.name,
+        leaf.version, leaf.dep, path.relative('.', leaf.__filename));
       leaf.problems = [issue];
       problems.push(issue);
       leaf.extraneous = true;
@@ -537,17 +530,17 @@ try {
     <li>description and source-code<pre class="apidocCodePre">function loadModules(root, depType) {
   tryRequire.cache.reset(); // reset the package cache on re-run
   return loadModulesInternal(root, depType || null).then(function (tree) {
-    // ensure there&#x27;s no missing packages our known root deps
+    // ensure there's no missing packages our known root deps
     var missing = [];
     if (tree.__dependencies) {
       Object.keys(tree.__dependencies).forEach(function (name) {
         if (!tree.dependencies[name]) {
           missing.push(resolve(name, root).then(function (dir) {
             return loadModulesInternal(dir, depTypes.PROD, {
-              __from: [tree.name + &#x27;@&#x27; + tree.version, name],
+              __from: [tree.name + '@' + tree.version, name],
             });
           }).catch(function (e) {
-            if (e.code === &#x27;NO_PACKAGE_FOUND&#x27;) {
+            if (e.code === 'NO_PACKAGE_FOUND') {
               return false;
             }
           }));
@@ -582,33 +575,33 @@ try {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function pluck(root, path, name, range) {
-  if (range === &#x27;latest&#x27;) {
-    range = &#x27;*&#x27;;
+  if (range === 'latest') {
+    range = '*';
   }
 
   // Cycle through the tree path via the root tree object **ala node require**.
-  // note that we don&#x27;t need the first item in the path (which is the root
+  // note that we don't need the first item in the path (which is the root
   // package name).
   var from = path.slice(0);
   var rootPath = moduleToObject(from.shift(), parseOptions).name;
 
-  // if the root of the virtual tree doesn&#x27;t even match our path, bail out
+  // if the root of the virtual tree doesn't even match our path, bail out
   if (rootPath !== root.name) {
     return false;
   }
 
   // do a check to see if the last item in the path is actually the package
-  // we&#x27;re looking for, and if it&#x27;s not, push it on
-  if (from.length !== 0 &#x26;&#x26;
+  // we're looking for, and if it's not, push it on
+  if (from.length !== 0 &amp;&amp;
       moduleToObject(from.slice(-1).pop(), parseOptions).name === name) {
     from.pop();
   }
 
   // then we always put the target package on the end of the chain
-  // to ensure it&#x27;s in exactly the right format to be used in `getMatch`
-  from.push(name + &#x27;@&#x27; + range);
+  // to ensure it's in exactly the right format to be used in `getMatch`
+  from.push(name + '@' + range);
 
-  debug(&#x27;using forward search %s@%s in %s&#x27;, from.join(&#x27; &#x3e; &#x27;));
+  debug('using forward search %s@%s in %s', from.join(' &gt; '));
 
   var match = false;
   var leaf = root;
@@ -645,7 +638,7 @@ vuln.__filename = plucked.__filename;
 vuln.shrinkwrap = plucked.shrinkwrap;
 vuln.bundled = plucked.bundled;
 
-// this is an edgecase when we&#x27;re testing the directly vuln pkg
+// this is an edgecase when we're testing the directly vuln pkg
 if (vuln.from.length === 1) {
   return;
 ...</pre></li>
@@ -699,14 +692,14 @@ if (vuln.from.length === 1) {
 
   walk(deps, function (dep) {
     var shallowCopy = copy(dep);
-    res.dependencies[dep.name + &#x27;@&#x27; + dep.version] = shallowCopy;
+    res.dependencies[dep.name + '@' + dep.version] = shallowCopy;
   });
 
   return res;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 
-debug(&#x27;to upgrade&#x27;, upgrade);
+debug('to upgrade', upgrade);
 
 if (upgrade.length === 0) {
   return;
@@ -743,7 +736,7 @@ var promise = uninstall(pkgManager, toUninstall, live)
 
   Object.keys(deps).forEach(function (name) {
     var res = filter(deps[name], name, deps);
-    if (!res &#x26;&#x26; deps[name] &#x26;&#x26; deps[name].dep) {
+    if (!res &amp;&amp; deps[name] &amp;&amp; deps[name].dep) {
       walk(deps[name].dependencies, filter);
     }
   });
@@ -769,7 +762,7 @@ var promise = uninstall(pkgManager, toUninstall, live)
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function createSpinner(label) {
   if (!label) {
-    throw new Error(&#x27;spinner requires a label&#x27;);
+    throw new Error('spinner requires a label');
   }
 
   if (spinners[label] === undefined) {
@@ -778,9 +771,9 @@ var promise = uninstall(pkgManager, toUninstall, live)
 
   // helper...
   return new Promise(function (resolve) {
-    debug(&#x27;spinner: %s&#x27;, label);
+    debug('spinner: %s', label);
     spinners[label].push(spinner({
-      // string: &#x27;◐◓◑◒&#x27;,
+      // string: 'â—â—“â—‘â—’',
       stream: sticky ? process.stdout : process.stderr,
       interval: 75,
       label: label,
@@ -803,11 +796,11 @@ var promise = uninstall(pkgManager, toUninstall, live)
     <ul>
     <li>description and source-code<pre class="apidocCodePre">clear = function (label) {
   if (spinners[label] === undefined) {
-    throw new Error(&#x27;unknown spinner label: &#x27; + label);
+    throw new Error('unknown spinner label: ' + label);
   }
 
   return function (res) {
-    debug(&#x27;clearing %s (%s)&#x27;, label, spinners[label].length);
+    debug('clearing %s (%s)', label, spinners[label].length);
     if (spinners[label].length) {
       var s = spinners[label].pop();
       if (s) {
@@ -821,7 +814,7 @@ var promise = uninstall(pkgManager, toUninstall, live)
   }
 
   return function (res) {
-    debug(&#x27;clearing %s (%s)&#x27;, label, spinners[label].length);
+    debug('clearing %s (%s)', label, spinners[label].length);
     if (spinners[label].length) {
       var s = spinners[label].pop();
       if (s) {
@@ -857,13 +850,13 @@ createSpinner.clearAll = function () {
 }
 return res;
 }).catch(function (error) {
-var spinner = require(&#x27;../lib/spinner&#x27;);
+var spinner = require('../lib/spinner');
 spinner.<span class="apidocCodeKeywordSpan">clearAll</span>();
-var analytics = require(&#x27;../lib/analytics&#x27;);
-var command = &#x27;bad-command&#x27;;
+var analytics = require('../lib/analytics');
+var command = 'bad-command';
 
-if (error.code === &#x27;VULNS&#x27;) {
-  // this isn&#x27;t a bad command, so we won&#x27;t record it as such
+if (error.code === 'VULNS') {
+  // this isn't a bad command, so we won't record it as such
   command = args.command;
 } else {
 ...</pre></li>
@@ -891,10 +884,10 @@ return Promise.resolve(options);
 function processWizardFlow(options) {
 spinner.<span class="apidocCodeKeywordSpan">sticky</span>();
 
-if (options[&#x27;dry-run&#x27;]) {
-  debug(&#x27;*** dry run ****&#x27;);
+if (options['dry-run']) {
+  debug('*** dry run ****');
 } else {
-  debug(&#x27;~~~~ LIVE RUN ~~~~&#x27;);
+  debug('~~~~ LIVE RUN ~~~~');
 }
 ...</pre></li>
     </ul>
@@ -915,19 +908,19 @@ if (options[&#x27;dry-run&#x27;]) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">execute = function (command, args, options) {
   var spawnOptions = { shell: true };
-  if (options &#x26;&#x26; options.cwd) {
+  if (options &amp;&amp; options.cwd) {
     spawnOptions.cwd = options.cwd;
   }
 
   return new Promise(function (resolve, reject) {
-    var stdout = &#x27;&#x27;;
-    var stderr = &#x27;&#x27;;
+    var stdout = '';
+    var stderr = '';
 
     var proc = childProcess.spawn(command, args, spawnOptions);
-    proc.stdout.on(&#x27;data&#x27;, function (data) { stdout = stdout + data; });
-    proc.stderr.on(&#x27;data&#x27;, function (data) { stderr = stderr + data; });
+    proc.stdout.on('data', function (data) { stdout = stdout + data; });
+    proc.stderr.on('data', function (data) { stderr = stderr + data; });
 
-    proc.on(&#x27;close&#x27;, function (code) {
+    proc.on('close', function (code) {
       if (code !== 0) {
         return reject(stdout || stderr);
       }
@@ -936,21 +929,21 @@ if (options[&#x27;dry-run&#x27;]) {
   });
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-var Promise = require(&#x27;es6-promise&#x27;).Promise; // jshint ignore:line
-var parse = require(&#x27;./mvn-tree-parse&#x27;);
-var fs = require(&#x27;fs&#x27;);
-var path = require(&#x27;path&#x27;);
-var subProcess = require(&#x27;../../sub-process&#x27;);
+var Promise = require('es6-promise').Promise; // jshint ignore:line
+var parse = require('./mvn-tree-parse');
+var fs = require('fs');
+var path = require('path');
+var subProcess = require('../../sub-process');
 
 module.exports = function (root, targetFile, policy) {
-return subProcess.<span class="apidocCodeKeywordSpan">execute</span>(&#x27;mvn&#x27;, buildArgs(root, targetFile), { cwd: root })
+return subProcess.<span class="apidocCodeKeywordSpan">execute</span>('mvn', buildArgs(root, targetFile), { cwd: root })
   .then(function (result) {
     return parse(result.stdout);
   });
 };
 
 function buildArgs(root, targetFile) {
-// Requires Maven &#x3e;= 2.2
+// Requires Maven &gt;= 2.2
 ...</pre></li>
     </ul>
 
@@ -963,3 +956,4 @@ function buildArgs(root, targetFile) {
     ]
 </div>
 </div>
+</body></html>
